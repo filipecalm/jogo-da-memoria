@@ -1,0 +1,84 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.header {
+  text-decoration: underline;
+  font-family: Tahoma, sans-serif;
+  height: 60px;
+  width: 45rem;
+  margin-left: 17.7rem;
+  margin-top: 2rem;
+  background: linear-gradient(-45deg, #ee0c0c, #a92929, #a54040, #490202);
+  background-size: 100%;
+  display: flex;
+  flex-direction:row;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  box-shadow: 0px 0px 0px 0px #ffffff;
+  border-radius: 50%;
+  border: 1px solid #ffffff;
+  font-style: italic;
+  color: rgba(220, 183, 183, 0.757);
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  background-color: rgb(41, 135, 169);
+
+}
+
+.memory-game {
+  height: 450px;
+  width: 450px;
+  margin-top: 6rem;
+  margin-left: 19rem;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items:center;
+  justify-content: center;
+  perspective: 1000px;
+  position: relative;
+}
+
+.card {
+  height: calc(33.333% - 10px);
+  width: calc(25% - 10px);
+  margin: 5px;
+  position: relative;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 3);
+  cursor: pointer;
+  transform: scale(1);
+  transform-style: preserve-3d;
+  transition: transform 0.9s;
+}
+
+.card:active {
+  transform: scale(0.97);
+  transition: transform .2s;
+}
+
+.card-front,
+.card-back {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  position: absolute;
+  border-radius: 1px;
+  background: rgb(41, 135, 169);
+  backface-visibility: hidden;
+}
+
+.card-front {
+transform: rotateY(180deg);
+}
+
+.card.flip {
+  transform: rotateY(180deg);
+}
+
